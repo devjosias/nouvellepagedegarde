@@ -20,20 +20,41 @@
 
     <style>
         body {
-            /* background-color: ;
-                font-family: "Avenir", "Montserrat"; */
-        }
-
-        body {
             margin: 0;
             padding: 0;
-            background: #96D0EE;
             font-family: "Montserrat", "Avenir", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            /* height: 100vh; */
-        }
+            
+            /* background: #96D0EE; */
+            /* background: linear-gradient(
+                to bottom,
+                #96D0EE 0%,
+                #FFFFFF 50%,
+                #004B70 100%
+            ); */
+
+            /* Dégradé large pour permettre le déplacement */
+            background: linear-gradient(90deg, #96D0EE, #004B70);
+            background-size: 300% 100%;
+
+                /* Animation */
+                animation: bgMove 24s ease-in-out infinite;
+            }
+
+            @keyframes bgMove {
+                0% {
+                    background-position: 0% 0%;
+                }
+                50% {
+                    background-position: 100% 0%;
+                }
+                100% {
+                    background-position: 0% 0%;
+                }
+
+            }
 
         .login-container {
             background: white;
@@ -139,7 +160,9 @@
     <div>
         <div class="row justify-content-center mb-4 text-center">
             <img src="logo-mairie-miniature-1707905764.png" alt="Logo de la Mairie de Cotonou" style="width: 200px;">
-            <h3 class="mt-3">Bienvenue, connectez-vous !</h3>
+            <h3 class="mt-3" style="color: #ffff;">BIENVENUE, CONNECTEZ-VOUS !</h3>
+            <hr class="mt-3" style="width: 90px; border-top: 6px solid #ffff;">
+            <h3 style="color: #004B70; font-weight: bold;">Mairie de Cotonou</h3>
         </div>
 
         <div class="row justify-content-center align-items-center" style="gap: 50px;">
@@ -197,7 +220,7 @@
 
         <!-- Copyright -->
         <div class="row mt-4">
-            <div class="col text-center" style="color: #003b63; font-size: 14px;">
+            <div class="col text-center" style="color:#ffffff; font-size: 14px; font-weight: bold;">
                 &copy; 2025 Mairie de COTONOU - NICEMAN | Tous droits Réservés
             </div>
         </div>
